@@ -10,6 +10,7 @@
 .hotel-intro{display:flex;justify-content:space-between;gap:20px;align-items:end;padding-bottom:20px;border-bottom:1px solid var(--line)}.hotel-intro h1{font-size:34px;margin:0}.hotel-intro p{font-size:13px;color:var(--muted);max-width:500px;line-height:1.7}.hotel-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0 30px}.hotel-table th{text-align:left;color:var(--muted);font-size:11px;padding:10px 8px;border-bottom:2px solid var(--ink)}.hotel-table td{padding:15px 8px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}.hotel-table .money{color:var(--sea);font-size:17px;font-weight:750;white-space:nowrap}.hotel-row{cursor:pointer}.hotel-details{border-bottom:1px solid var(--line)}.hotel-details summary{cursor:pointer;padding:16px 0;display:flex;justify-content:space-between;gap:16px;font-weight:700}.hotel-details summary span:last-child{color:var(--sea)}.hotel-details .stop{border:0;padding-top:4px}.tile-warning{position:absolute;z-index:700;left:14px;right:14px;bottom:14px;background:#fff;padding:12px 14px;border:1px solid var(--line);box-shadow:var(--shadow);font-size:12px;display:none}
 .gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:6px;height:330px;max-width:620px;margin:14px 0 7px;overflow:hidden;background:#e6ebe7}.gallery-item{min-width:0;min-height:0;overflow:hidden}.gallery-item:first-child{grid-row:1/3}.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}.gallery a:hover img{transform:scale(1.02)}.gallery[data-count="1"]{display:block}.gallery-caption{font-size:11px;color:var(--muted);margin-bottom:13px}.gallery-caption a{border-bottom:1px solid currentColor}@media(max-width:880px){.gallery{height:280px;max-width:none}}@media(max-width:880px){.topbar{height:auto;min-height:56px;padding:10px 14px;flex-wrap:wrap}.trip-meta{display:none}.tabs{order:3;width:100%;margin:0 -2px -10px;padding-bottom:0}.workspace{display:block;height:auto}.map-panel{height:330px;border:0;border-bottom:1px solid var(--line)}.map-panel.collapsed{height:52px}.map-panel.collapsed .map,.map-panel.collapsed .map-foot{display:none}.map-toggle{display:block}.map-note{display:none}.content{overflow:visible;padding:28px 17px 60px}.booking{grid-template-columns:1fr;gap:15px}.route-row{grid-template-columns:78px 1fr}.route-row span{display:none}.stop{grid-template-columns:1fr;gap:7px}.shot{max-width:none}.shot img{height:min(66vw,300px)}.hotel-intro{display:block}.hotel-table th:nth-child(2),.hotel-table td:nth-child(2){display:none}.hotel-table{font-size:12px}.day-head h1,.hotel-intro h1{font-size:29px}}
 @media(max-width:420px){.brand{font-size:15px}.tab{padding:9px 9px;font-size:12px}.map-panel{height:300px}.content{padding-top:23px}.lead h1{font-size:35px}.route-row{grid-template-columns:72px 1fr;gap:12px}.stop-body h2{font-size:19px}}
+.hotel-impact{margin:18px 0;padding:18px;background:#edf3f0;border-left:3px solid var(--sea)}.hotel-impact h3{font-size:17px;margin:0 0 8px}.hotel-impact p{font-size:14px;line-height:1.75;margin:0 0 14px}.hotel-impact dl{margin:0}.hotel-impact dl>div{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.hotel-impact dt{font-size:12px;font-weight:700;color:var(--sea)}.hotel-impact dd{margin:0;font-size:13px;line-height:1.8}.hotel-impact small{display:block;margin-top:12px;line-height:1.7;color:var(--muted)}@media(max-width:550px){.hotel-impact{padding:14px}.hotel-impact dl>div{display:block}.hotel-impact dt{margin-bottom:5px}}
 </style></head><body><div class="app"><header class="topbar"><a class="brand" href="#" data-go="0">厦门行程</a><span class="trip-meta">10月5—7日</span><nav class="tabs" id="tabs"></nav></header><main class="workspace"><section class="map-panel" id="mapPanel"><div class="map-head"><strong id="mapTitle">全程地图</strong><span class="map-note">实时瓦片 · 点位可交互</span><button class="map-toggle" id="mapToggle">收起地图</button></div><div class="map" id="map"><div class="tile-warning" id="tileWarning">地图瓦片未加载。<a target="_blank" href="https://uri.amap.com/search?keyword=厦门&city=厦门&src=xiamen-trip&callnative=1">打开高德地图</a></div></div><div class="map-foot"><span>© OpenStreetMap contributors</span><a target="_blank" href="https://uri.amap.com/search?keyword=厦门&city=厦门&src=xiamen-trip&callnative=1">在高德打开</a></div></section><section class="content"><div class="content-inner" id="content"></div></section></main></div><script src="assets/leaflet.js"></script><script>
 const DATA={
   "hotel": {
@@ -83,7 +84,7 @@ const DATA={
     {
       "id": 1,
       "label": "5日·下午",
-      "date": "12:00抵达厦门北站。先放行李，再利用酒店所在片区完成海边主线，第一天不穿城。",
+      "date": "12:00抵达厦门北站，先去已订云顶北路全季放行李。下午五缘湾与椰风寨／会展海滩二选一；天气好时先把海边照片拍好，7日日出只当加分项。",
       "title": "抵达入住 · 五缘湾看帆船与落日",
       "color": "#007aff",
       "locations": [
@@ -231,6 +232,43 @@ const DATA={
           ]
         },
         {
+          "name": "椰风寨／会展沙滩，提前拍海边照片",
+          "time": "15:30—17:45 · 替换五缘湾",
+          "plan": "B",
+          "type": "sight",
+          "lat": 24.4633,
+          "lng": 118.1917,
+          "desc": "5日天气好就先完成一次海边散步和拍照，不把海滩体验全押在7日日出。这是下午海景方案，不能替代清晨日出。",
+          "detail": "先在云顶北路全季寄存或入住，约14:45—15:00打车出发；到椰风寨／会展海岸约25—40分钟，国庆以实时导航为准。只选其中一段开放公共海滩，不沿全线赶路。\n拍照：15:30后拍海面、沙滩脚印与人物，接近傍晚拍柔光人像。东侧海岸适合看日出，下午太阳主要在陆地方向，不按海上日落来期待。下方笔记展示椰风寨日出机位，下午光线不同。\n与五缘湾主线二选一，不同时跑两片海岸。约17:45离开，晚餐可在会展／前埔片区就近吃；若仍去小眼镜海鲜，先看排队与车程，不赶固定到店时间。\n10月4日核对公共入口、围挡及天气；椰风寨也不能默认不受施工影响。入口关闭改回五缘湾；下雨或强风改Plan C。",
+          "photos": [
+            {
+              "src": "https://sns-webpic-qc.xhscdn.com/202609291137/1e977d13bb3c9a9e1c5f4e79a066970a/notes_uhdr/1040g3qg325l3mv7g5g1g5nuogp00870g0ge01m8!nd_dft_wlteh_webp_3",
+              "localSrc": "assets/photos/sun_yefeng_0.webp",
+              "url": "https://www.xiaohongshu.com/explore/6ab9c6a1000000000b004303?xsec_token=ABHWjk23hSaOrtEsAugT12oNuHs_NTPcYpShS7A0j0LZI=&xsec_source=pc_feed",
+              "title": "9.28厦门椰风寨日出出片",
+              "author": "等等",
+              "date": "昨天 09:45 福建"
+            },
+            {
+              "src": "https://sns-webpic-qc.xhscdn.com/202609291137/f204b36761f5fbb85afe4621a6ab88f2/notes_uhdr/1040g3qg325l3mv7g5g005nuogp00870g3ib04mg!nd_dft_wlteh_webp_3",
+              "localSrc": "assets/photos/sun_yefeng_1.webp",
+              "url": "https://www.xiaohongshu.com/explore/6ab9c6a1000000000b004303?xsec_token=ABHWjk23hSaOrtEsAugT12oNuHs_NTPcYpShS7A0j0LZI=&xsec_source=pc_feed",
+              "title": "9.28厦门椰风寨日出出片",
+              "author": "等等",
+              "date": "昨天 09:45 福建"
+            },
+            {
+              "src": "https://sns-webpic-qc.xhscdn.com/202609291137/91e49484b7523ce26a480dff2604366a/notes_uhdr/1040g3qg325l3mv7g5g0g5nuogp00870gmclaq28!nd_dft_wlteh_webp_3",
+              "localSrc": "assets/photos/sun_yefeng_2.webp",
+              "url": "https://www.xiaohongshu.com/explore/6ab9c6a1000000000b004303?xsec_token=ABHWjk23hSaOrtEsAugT12oNuHs_NTPcYpShS7A0j0LZI=&xsec_source=pc_feed",
+              "title": "9.28厦门椰风寨日出出片",
+              "author": "等等",
+              "date": "昨天 09:45 福建"
+            }
+          ],
+          "xhs": "https://www.xiaohongshu.com/explore/6ab9c6a1000000000b004303?xsec_token=ABHWjk23hSaOrtEsAugT12oNuHs_NTPcYpShS7A0j0LZI=&xsec_source=pc_feed"
+        },
+        {
           "name": "五缘湾湿地公园与月圆桥",
           "time": "15:30—17:30",
           "plan": "B",
@@ -263,7 +301,7 @@ const DATA={
           "lat": 24.468,
           "lng": 118.11,
           "time": "入住后",
-          "desc": "雨天或累：酒店休息→万象城咖啡，文灶1号线到湖滨东路约15—25分钟门到门。离酒店最近的优先。",
+          "desc": "雨天优先在酒店休息，或就近去湾悦城喝咖啡。想逛万象城时再按实时导航前往，不作为刚到厦门后的首选。",
           "plan": "C",
           "type": "spot",
           "xhsKeyword": "厦门 华润万象城（厦门店）",
@@ -397,8 +435,8 @@ const DATA={
     {
       "id": 2,
       "label": "5日·晚上",
-      "date": "晚饭有滋有味：既有地道酱油水海鲜，也有八市老街的炸五香、姜母鸭与甜品。",
-      "title": "第一晚尝鲜 · 经典闽南海鲜与市井烟火",
+      "date": "小眼镜吃完就回酒店休息，不再专程去公园。想看夜景可选中山路骑楼街；八市小吃与海鲜晚餐二选一。",
+      "title": "海鲜晚餐 · 饭后自由安排",
       "color": "#ff9500",
       "locations": [
         {
@@ -410,7 +448,7 @@ const DATA={
           "type": "food",
           "xhsKeyword": "厦门 小眼镜大排档（万佳东方店）",
           "budget": "两人约180—260元（预算）",
-          "detail": "位于虎园路1号。公开人均约90-100元。国庆用餐高峰可能排队，建议17:30前或19:30后到店；排队若超过30分钟可就近换周边海鲜大排档。",
+          "detail": "位于虎园路1号。公开人均约90-100元。国庆用餐高峰可能排队，建议17:30前或19:30后到店；排队若超过30分钟可就近换周边海鲜大排档。\n饭后安排：吃完可直接打车回云顶北路全季。仍有体力再去中山路散步约30—45分钟，避开拥挤主街后及时返程。",
           "reserve": "https://www.dianping.com/shop/5379532/photos/album",
           "plan": "A",
           "entity": "little",
@@ -459,50 +497,6 @@ const DATA={
           "searchKeyword": "厦门 小眼镜大排档",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%B0%8F%E7%9C%BC%E9%95%9C%E5%A4%A7%E6%8E%92%E6%A1%A3",
           "appUrl": "xhsdiscover://item/696b795500000000220387c2"
-        },
-        {
-          "name": "中山公园",
-          "lat": 24.456,
-          "lng": 118.088,
-          "time": "19:15—20:00",
-          "desc": "附近短散步后回酒店，不再加远景点。",
-          "type": "spot",
-          "xhsKeyword": "厦门 中山公园",
-          "plan": "A",
-          "entity": "park",
-          "photos": [
-            {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281653/1f41374feb4c080344b5011fe5ec4337/notes_pre_post/1040g3k8325iqha81kqdg4a60fg8ou0qas52qjoo!nc_n_webp_prv_1",
-              "url": "https://www.xiaohongshu.com/explore/6ab76f96000000000a026f1d?xsec_token=ABJSsD1xvwQbV52yiT8Hwk7Re8sl2RiMy2ef741Vd8WEg=&xsec_source=",
-              "title": "✨厦门市中心免费宝藏公园｜中山公园太好逛",
-              "author": "Apple",
-              "date": "2天前",
-              "localSrc": "assets/photos/park_0_21e767264b.webp",
-              "noteId": "6ab76f96000000000a026f1d",
-              "searchKeyword": "✨厦门市中心免费宝藏公园 中山公园太好逛",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E2%9C%A8%E5%8E%A6%E9%97%A8%E5%B8%82%E4%B8%AD%E5%BF%83%E5%85%8D%E8%B4%B9%E5%AE%9D%E8%97%8F%E5%85%AC%E5%9B%AD%20%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD%E5%A4%AA%E5%A5%BD%E9%80%9B",
-              "appUrl": "xhsdiscover://item/6ab76f96000000000a026f1d"
-            }
-          ],
-          "xhs": "https://www.xiaohongshu.com/explore/6ab76f96000000000a026f1d?xsec_token=ABJSsD1xvwQbV52yiT8Hwk7Re8sl2RiMy2ef741Vd8WEg=&xsec_source=",
-          "researchLinks": [
-            {
-              "title": "✨厦门市中心免费宝藏公园｜中山公园太好逛",
-              "url": "https://www.xiaohongshu.com/search_result/6ab76f96000000000a026f1d?xsec_token=ABJSsD1xvwQbV52yiT8Hwk7Re8sl2RiMy2ef741Vd8WEg=&xsec_source="
-            },
-            {
-              "title": "极速版厦门中山公园Citywalk",
-              "url": "https://www.xiaohongshu.com/search_result/6a88f89d000000003703c718?xsec_token=ABF59F9zvcryxkuNvxB_xlZiXYa6PDMiOjrtzhh05ReOE=&xsec_source="
-            },
-            {
-              "title": "yaya",
-              "url": "https://www.xiaohongshu.com/search_result/6ab8523a0000000012034201?xsec_token=ABVLCodJRmPWqkOyoe8Oa8BiJBnZvJUuxfoz80zVoyBxY=&xsec_source="
-            }
-          ],
-          "noteId": "6ab76f96000000000a026f1d",
-          "searchKeyword": "厦门 中山公园",
-          "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD",
-          "appUrl": "xhsdiscover://item/6ab76f96000000000a026f1d"
         },
         {
           "name": "八市阿杰五香（大元路店）",
@@ -892,7 +886,7 @@ const DATA={
           "lat": 24.438,
           "lng": 118.102,
           "time": "按成功预约时段",
-          "desc": "B只改变顺序：先入厦大再南普陀，仍保留两个必去。若只约下午，上午南普陀＋华侨博物院，午后入校。",
+          "desc": "按预约时间调整顺序，厦大和南普陀都保留。只约到下午时，上午先去南普陀，再在沙坡尾散步或找咖啡店休息，午后按时入校。",
           "plan": "B",
           "type": "spot",
           "xhsKeyword": "厦门 厦门大学思明校区＋南普陀寺",
@@ -933,118 +927,95 @@ const DATA={
           "appUrl": "xhsdiscover://item/6a55cbe900000000060379d7"
         },
         {
-          "name": "华侨博物院",
-          "lat": 24.44,
-          "lng": 118.094,
-          "time": "空档45—60分钟",
-          "desc": "校园和寺庙之间的预约空档可选，位于厦港，短程移动约10—20分钟；不替代厦大必去。",
-          "plan": "B",
+          "name": "沙坡尾＋大学路，咖啡店休息",
+          "lat": 24.436,
+          "lng": 118.095,
+          "time": "预约空档60—90分钟 · 晴天",
+          "desc": "只逛避风坞和大学路，拍几张港湾、街角照片，再找咖啡店坐坐。不需要把所有文创店都逛完。",
           "type": "spot",
-          "xhsKeyword": "厦门 华侨博物院",
-          "reserve": "https://hqbwy.org.cn/zh/",
-          "entity": "museum",
+          "xhsKeyword": "厦门 沙坡尾 避风坞 双子塔 机位",
+          "plan": "B",
+          "entity": "shapowei",
           "photos": [
             {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281704/66973ec181e89e836d7d714fcd7e0bc9/notes_pre_post/1040g3k8323g279d1na905om0eq0md6tuskm6dr0!nd_dft_wgth_webp_3",
-              "url": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-              "title": "厦门华侨博物院｜逛展实用小贴士✨",
-              "author": "Ling梓",
-              "date": "08-05",
-              "localSrc": "assets/photos/museum_0_40a9401e84.webp",
-              "noteId": "6a7312300000000022017513",
-              "searchKeyword": "厦门华侨博物院 逛展实用小贴士✨",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2%20%E9%80%9B%E5%B1%95%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%B4%B4%E5%A3%AB%E2%9C%A8",
-              "appUrl": "xhsdiscover://item/6a7312300000000022017513"
-            },
-            {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281704/7865fd8996b1c2f83bad0f89de1b31a3/notes_pre_post/1040g3k8323g279d1naa05om0eq0md6tubt5fbrg!nd_dft_wgth_webp_3",
-              "url": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-              "title": "厦门华侨博物院｜逛展实用小贴士✨",
-              "author": "Ling梓",
-              "date": "08-05",
-              "localSrc": "assets/photos/museum_1_e90882315e.webp",
-              "noteId": "6a7312300000000022017513",
-              "searchKeyword": "厦门华侨博物院 逛展实用小贴士✨",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2%20%E9%80%9B%E5%B1%95%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%B4%B4%E5%A3%AB%E2%9C%A8",
-              "appUrl": "xhsdiscover://item/6a7312300000000022017513"
+              "src": "https://sns-webpic-qc.xhscdn.com/202609281655/11bc8936c923eeb1f6ae8f0088de79f3/notes_pre_post/1040g3k0324peuv4u1g004bv0vona4qo50qmp8po!nc_n_webp_prv_1",
+              "url": "https://www.xiaohongshu.com/explore/6a94efdb000000002a03a2db?xsec_token=ABCQmfTE2_wVco8IX2MEbPX2j1xvaUSfV3m0IGVVN4S-s=&xsec_source=",
+              "title": "沙坡尾拍老厦门旧时光，citywalk 逛吃攻略",
+              "author": "琳仔环游记🐳",
+              "date": "09-06",
+              "localSrc": "assets/photos/shapowei_0_902bc983d8.webp",
+              "noteId": "6a94efdb000000002a03a2db",
+              "searchKeyword": "沙坡尾拍老厦门旧时光，citywalk 逛吃攻略",
+              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E6%B2%99%E5%9D%A1%E5%B0%BE%E6%8B%8D%E8%80%81%E5%8E%A6%E9%97%A8%E6%97%A7%E6%97%B6%E5%85%89%EF%BC%8Ccitywalk%20%E9%80%9B%E5%90%83%E6%94%BB%E7%95%A5",
+              "appUrl": "xhsdiscover://item/6a94efdb000000002a03a2db"
             }
           ],
-          "xhs": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
+          "xhs": "https://www.xiaohongshu.com/explore/6a94efdb000000002a03a2db?xsec_token=ABCQmfTE2_wVco8IX2MEbPX2j1xvaUSfV3m0IGVVN4S-s=&xsec_source=",
           "researchLinks": [
             {
-              "title": "厦门免费景点｜这两个馆顺路一起逛",
-              "url": "https://www.xiaohongshu.com/search_result/6ab3e192000000001403abc1?xsec_token=AB6o7MfcbjC9xiCN0GP2Zb64hBNr4Oz6IDI6nY27ELIEI=&xsec_source="
+              "title": "厦门散步地图⑭｜沙坡尾",
+              "url": "https://www.xiaohongshu.com/search_result/69874d73000000000903a608?xsec_token=AB_bgP57qDITXt-h25WnTN2vqWIRGwFfyrGsD6Hnn-xGk=&xsec_source="
             },
             {
-              "title": "或许是厦门最值得去的小众博物馆",
-              "url": "https://www.xiaohongshu.com/search_result/6a0da5b90000000006037583?xsec_token=ABVK7L_Xd5hZMLe6LP3idD-yUk6fa6Csbt1vaa8nr8CgA=&xsec_source="
+              "title": "厦门沙坡尾｜Citywalk夜景封神",
+              "url": "https://www.xiaohongshu.com/search_result/6ab7a3c7000000001403a035?xsec_token=ABJSsD1xvwQbV52yiT8Hwk7dx6UeW890vuJnVy1WJ_Vyo=&xsec_source="
             },
             {
-              "title": "康熙乾隆亲笔真迹！厦门文旅居然没宣传",
-              "url": "https://www.xiaohongshu.com/search_result/6a9b7ae1000000002902cc43?xsec_token=ABLwOKTPSaT-KBjPUaXF9NohSNGT_FKo6wOSmjm8OAoUA=&xsec_source="
+              "title": "沙坡尾拍老厦门旧时光，citywalk 逛吃攻略",
+              "url": "https://www.xiaohongshu.com/search_result/6a94efdb000000002a03a2db?xsec_token=ABCQmfTE2_wVco8IX2MEbPX2j1xvaUSfV3m0IGVVN4S-s=&xsec_source="
             }
           ],
-          "noteId": "6a7312300000000022017513",
-          "searchKeyword": "厦门 华侨博物院",
-          "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2",
-          "appUrl": "xhsdiscover://item/6a7312300000000022017513"
+          "detail": "从南普陀或厦大附近按实时导航步行、短程打车。至少给返回访客中心和入校排队留30分钟；空档不足1小时就留在厦大附近休息。上午已逛过，下午不再重复。",
+          "noteId": "6a94efdb000000002a03a2db",
+          "searchKeyword": "厦门 沙坡尾避风坞",
+          "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E6%B2%99%E5%9D%A1%E5%B0%BE%E9%81%BF%E9%A3%8E%E5%9D%9E",
+          "appUrl": "xhsdiscover://item/6a94efdb000000002a03a2db"
         },
         {
-          "name": "华侨博物院",
-          "lat": 24.44,
-          "lng": 118.094,
-          "time": "09:00—11:00",
-          "desc": "雨天：室内补位，厦大仍按有效预约时段入校；休息需求可缩短校园走路。预约失败单独重排，不能算完成必去。",
+          "name": "SM厦门城市广场",
+          "lat": 24.501,
+          "lng": 118.126,
+          "time": "完成厦大后再去 · 雨天或疲劳",
+          "desc": "厦大仍按预约时段入校；雨大或走累时缩短校园游览，结束后把下午老城路线换成SM，吃饭、喝咖啡、休息。",
           "plan": "C",
           "type": "spot",
-          "xhsKeyword": "厦门 华侨博物院",
-          "reserve": "https://hqbwy.org.cn/zh/",
-          "entity": "museum",
+          "xhsKeyword": "厦门 SM厦门城市广场",
+          "reserve": "https://www.smsupermalls.cn/city/about.aspx?cid=1",
+          "entity": "sm",
           "photos": [
             {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281704/66973ec181e89e836d7d714fcd7e0bc9/notes_pre_post/1040g3k8323g279d1na905om0eq0md6tuskm6dr0!nd_dft_wgth_webp_3",
-              "url": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-              "title": "厦门华侨博物院｜逛展实用小贴士✨",
-              "author": "Ling梓",
-              "date": "08-05",
-              "localSrc": "assets/photos/museum_0_40a9401e84.webp",
-              "noteId": "6a7312300000000022017513",
-              "searchKeyword": "厦门华侨博物院 逛展实用小贴士✨",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2%20%E9%80%9B%E5%B1%95%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%B4%B4%E5%A3%AB%E2%9C%A8",
-              "appUrl": "xhsdiscover://item/6a7312300000000022017513"
-            },
-            {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281704/7865fd8996b1c2f83bad0f89de1b31a3/notes_pre_post/1040g3k8323g279d1naa05om0eq0md6tubt5fbrg!nd_dft_wgth_webp_3",
-              "url": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-              "title": "厦门华侨博物院｜逛展实用小贴士✨",
-              "author": "Ling梓",
-              "date": "08-05",
-              "localSrc": "assets/photos/museum_1_e90882315e.webp",
-              "noteId": "6a7312300000000022017513",
-              "searchKeyword": "厦门华侨博物院 逛展实用小贴士✨",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2%20%E9%80%9B%E5%B1%95%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%B4%B4%E5%A3%AB%E2%9C%A8",
-              "appUrl": "xhsdiscover://item/6a7312300000000022017513"
+              "src": "https://sns-webpic-qc.xhscdn.com/202609281651/d23ea7885dff642e6890dfc07d8069a0/notes_pre_post/1040g3k8325hp77975g605nbif8eg8o2ir6nj56g!nc_n_webp_prv_1",
+              "url": "https://www.xiaohongshu.com/explore/6ab65ecd000000001b01eb8c?xsec_token=ABncocwh1PHut9WuEPSkSDSpZcnO27H6rIfW9rt9VPoB8=&xsec_source=",
+              "title": "浅逛一下不潮不用花钱的厦门SM四期",
+              "author": "离岛影像日志",
+              "date": "2天前",
+              "localSrc": "assets/photos/sm_0_59a8ab7622.webp",
+              "noteId": "6ab65ecd000000001b01eb8c",
+              "searchKeyword": "浅逛一下不潮不用花钱的厦门SM四期",
+              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E6%B5%85%E9%80%9B%E4%B8%80%E4%B8%8B%E4%B8%8D%E6%BD%AE%E4%B8%8D%E7%94%A8%E8%8A%B1%E9%92%B1%E7%9A%84%E5%8E%A6%E9%97%A8SM%E5%9B%9B%E6%9C%9F",
+              "appUrl": "xhsdiscover://item/6ab65ecd000000001b01eb8c"
             }
           ],
-          "xhs": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
+          "xhs": "https://www.xiaohongshu.com/explore/6ab65ecd000000001b01eb8c?xsec_token=ABncocwh1PHut9WuEPSkSDSpZcnO27H6rIfW9rt9VPoB8=&xsec_source=",
           "researchLinks": [
             {
-              "title": "厦门免费景点｜这两个馆顺路一起逛",
-              "url": "https://www.xiaohongshu.com/search_result/6ab3e192000000001403abc1?xsec_token=AB6o7MfcbjC9xiCN0GP2Zb64hBNr4Oz6IDI6nY27ELIEI=&xsec_source="
+              "title": "浅逛一下不潮不用花钱的厦门SM四期",
+              "url": "https://www.xiaohongshu.com/search_result/6ab65ecd000000001b01eb8c?xsec_token=ABncocwh1PHut9WuEPSkSDSpZcnO27H6rIfW9rt9VPoB8=&xsec_source="
             },
             {
-              "title": "或许是厦门最值得去的小众博物馆",
-              "url": "https://www.xiaohongshu.com/search_result/6a0da5b90000000006037583?xsec_token=ABVK7L_Xd5hZMLe6LP3idD-yUk6fa6Csbt1vaa8nr8CgA=&xsec_source="
+              "title": "厦门｜SM 四期 CHAO BLOCK！",
+              "url": "https://www.xiaohongshu.com/search_result/6ab8dad10000000012036bce?xsec_token=ABVLCodJRmPWqkOyoe8Oa8BkOjjKapWL8YENPWHhLYeWk=&xsec_source="
             },
             {
-              "title": "康熙乾隆亲笔真迹！厦门文旅居然没宣传",
-              "url": "https://www.xiaohongshu.com/search_result/6a9b7ae1000000002902cc43?xsec_token=ABLwOKTPSaT-KBjPUaXF9NohSNGT_FKo6wOSmjm8OAoUA=&xsec_source="
+              "title": "厦门SM四期｜逛玩+拍照📸打卡点",
+              "url": "https://www.xiaohongshu.com/search_result/6ab896020000000018010dc7?xsec_token=ABVLCodJRmPWqkOyoe8Oa8BicJ851qHRnJweSyki_BooY=&xsec_source="
             }
           ],
-          "noteId": "6a7312300000000022017513",
-          "searchKeyword": "厦门 华侨博物院",
-          "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2",
-          "appUrl": "xhsdiscover://item/6a7312300000000022017513"
+          "noteId": "6ab65ecd000000001b01eb8c",
+          "searchKeyword": "厦门 SM厦门城市广场",
+          "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20SM%E5%8E%A6%E9%97%A8%E5%9F%8E%E5%B8%82%E5%B9%BF%E5%9C%BA",
+          "appUrl": "xhsdiscover://item/6ab65ecd000000001b01eb8c",
+          "detail": "SM距离厦大较远，不适合用来填入校前的短空档。等预约时在厦大附近找室内座位；完成校园游览后再按实时导航去SM，也可以直接回云顶北路酒店。"
         }
       ]
     },
@@ -1137,7 +1108,7 @@ const DATA={
           "lng": 118.102,
           "type": "sight",
           "desc": "只走蓼花路—共和路—深田路—民治路的60—70分钟短环线，不照搬五六小时全程。",
-          "detail": "从花市步行或骑行接入；百家村周末人流通常比幸福路舒缓。",
+          "detail": "从花市步行或骑行接入；百家村周末人流通常比幸福路舒缓。\n中山公园白天顺路经过即可，额外停留15—20分钟；无需完整绕湖，也不另安排夜游。",
           "photos": [
             {
               "src": "https://sns-webpic-qc.xhscdn.com/202609291041/bd2ee9d69b813f9d6faea92caaab4d94/1040g00831vio1obojm0g5o973ung9ba9345eqs8!nd_dft_wlteh_webp_3",
@@ -1223,11 +1194,11 @@ const DATA={
           "researchLinks": []
         },
         {
-          "name": "沙坡尾避风坞",
+          "name": "沙坡尾＋大学路，咖啡店休息",
           "lat": 24.436,
           "lng": 118.095,
           "time": "13:15—15:00",
-          "desc": "不想走老城社区时，只逛避风坞与大学路；路线更简单，但国庆人流通常更高。",
+          "desc": "替换整条老城路线的轻松方案：午餐后散步、拍照，再找咖啡店坐坐。上午已逛过就跳过，不再重复。",
           "type": "spot",
           "xhsKeyword": "厦门 沙坡尾 避风坞 双子塔 机位",
           "plan": "B",
@@ -1261,74 +1232,18 @@ const DATA={
               "url": "https://www.xiaohongshu.com/search_result/6a94efdb000000002a03a2db?xsec_token=ABCQmfTE2_wVco8IX2MEbPX2j1xvaUSfV3m0IGVVN4S-s=&xsec_source="
             }
           ],
-          "detail": "【省钱防坑】在公共木栈道免费拍照角度就极好，不需要花几十元进收费咖啡馆的所谓“观景台”。岸边有许多独立文创店和咖啡馆，适合午后乘凉。",
+          "detail": "不与溪岸路—百家村—退化公园—幸福路全线叠加。先看公共岸线和街角，走累了就休息，下午不用填满。",
           "noteId": "6a94efdb000000002a03a2db",
           "searchKeyword": "厦门 沙坡尾避风坞",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E6%B2%99%E5%9D%A1%E5%B0%BE%E9%81%BF%E9%A3%8E%E5%9D%9E",
           "appUrl": "xhsdiscover://item/6a94efdb000000002a03a2db"
         },
         {
-          "name": "华侨博物院",
-          "lat": 24.44,
-          "lng": 118.094,
-          "time": "午餐后",
-          "desc": "雨大/风大：就近室内参观，若上午已去则回酒店休息。沙滩移7日早上晴天窗口。",
-          "plan": "C",
-          "type": "spot",
-          "xhsKeyword": "厦门 华侨博物院",
-          "entity": "museum",
-          "photos": [
-            {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281704/66973ec181e89e836d7d714fcd7e0bc9/notes_pre_post/1040g3k8323g279d1na905om0eq0md6tuskm6dr0!nd_dft_wgth_webp_3",
-              "url": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-              "title": "厦门华侨博物院｜逛展实用小贴士✨",
-              "author": "Ling梓",
-              "date": "08-05",
-              "localSrc": "assets/photos/museum_0_40a9401e84.webp",
-              "noteId": "6a7312300000000022017513",
-              "searchKeyword": "厦门华侨博物院 逛展实用小贴士✨",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2%20%E9%80%9B%E5%B1%95%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%B4%B4%E5%A3%AB%E2%9C%A8",
-              "appUrl": "xhsdiscover://item/6a7312300000000022017513"
-            },
-            {
-              "src": "https://sns-webpic-qc.xhscdn.com/202609281704/7865fd8996b1c2f83bad0f89de1b31a3/notes_pre_post/1040g3k8323g279d1naa05om0eq0md6tubt5fbrg!nd_dft_wgth_webp_3",
-              "url": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-              "title": "厦门华侨博物院｜逛展实用小贴士✨",
-              "author": "Ling梓",
-              "date": "08-05",
-              "localSrc": "assets/photos/museum_1_e90882315e.webp",
-              "noteId": "6a7312300000000022017513",
-              "searchKeyword": "厦门华侨博物院 逛展实用小贴士✨",
-              "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2%20%E9%80%9B%E5%B1%95%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%B4%B4%E5%A3%AB%E2%9C%A8",
-              "appUrl": "xhsdiscover://item/6a7312300000000022017513"
-            }
-          ],
-          "xhs": "https://www.xiaohongshu.com/explore/6a7312300000000022017513?xsec_token=ABfKXA6bHW8riT3poyUVx0WYNRWqGppcdgU4VStbdp6cY=&xsec_source=pc_feed",
-          "researchLinks": [
-            {
-              "title": "厦门免费景点｜这两个馆顺路一起逛",
-              "url": "https://www.xiaohongshu.com/search_result/6ab3e192000000001403abc1?xsec_token=AB6o7MfcbjC9xiCN0GP2Zb64hBNr4Oz6IDI6nY27ELIEI=&xsec_source="
-            },
-            {
-              "title": "或许是厦门最值得去的小众博物馆",
-              "url": "https://www.xiaohongshu.com/search_result/6a0da5b90000000006037583?xsec_token=ABVK7L_Xd5hZMLe6LP3idD-yUk6fa6Csbt1vaa8nr8CgA=&xsec_source="
-            },
-            {
-              "title": "康熙乾隆亲笔真迹！厦门文旅居然没宣传",
-              "url": "https://www.xiaohongshu.com/search_result/6a9b7ae1000000002902cc43?xsec_token=ABLwOKTPSaT-KBjPUaXF9NohSNGT_FKo6wOSmjm8OAoUA=&xsec_source="
-            }
-          ],
-          "noteId": "6a7312300000000022017513",
-          "searchKeyword": "厦门 华侨博物院",
-          "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%8D%8E%E4%BE%A8%E5%8D%9A%E7%89%A9%E9%99%A2",
-          "appUrl": "xhsdiscover://item/6a7312300000000022017513"
-        },
-        {
           "name": "SM厦门城市广场",
           "lat": 24.501,
           "lng": 118.126,
-          "time": "回市区后",
-          "desc": "雨天或累：云顶北路全季出发，3号线火炬园换1号线乌石浦，门到门约25—40分钟；SM不同馆区还需步行。正常天气可选其他街区，商场国庆也可能拥挤。",
+          "time": "午餐后 · 雨天或走累",
+          "desc": "雨天或走累时，直接用SM替换下午户外路线，吃饭、喝咖啡、逛一两个馆区即可，之后回云顶北路酒店休息。",
           "plan": "C",
           "type": "spot",
           "xhsKeyword": "厦门 SM厦门城市广场",
@@ -1366,7 +1281,8 @@ const DATA={
           "noteId": "6ab65ecd000000001b01eb8c",
           "searchKeyword": "厦门 SM厦门城市广场",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20SM%E5%8E%A6%E9%97%A8%E5%9F%8E%E5%B8%82%E5%B9%BF%E5%9C%BA",
-          "appUrl": "xhsdiscover://item/6ab65ecd000000001b01eb8c"
+          "appUrl": "xhsdiscover://item/6ab65ecd000000001b01eb8c",
+          "detail": "从厦大/厦港直接按实时导航去SM，不必先回酒店再出门。若上午已在SM休息，下午直接回酒店；商场国庆也可能拥挤，不必把所有馆区逛完。"
         },
         {
           "name": "厦门K11 Select购物艺术中心",
@@ -2226,7 +2142,28 @@ const DATA={
           "noteId": "6a7fd7e200000000280320db",
           "searchKeyword": "厦门 全季厦门机场云顶北路酒店",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%85%A8%E5%AD%A3%E5%8E%A6%E9%97%A8%E6%9C%BA%E5%9C%BA%E4%BA%91%E9%A1%B6%E5%8C%97%E8%B7%AF%E9%85%92%E5%BA%97",
-          "appUrl": "xhsdiscover://item/6a7fd7e200000000280320db"
+          "appUrl": "xhsdiscover://item/6a7fd7e200000000280320db",
+          "routeImpact": {
+            "verdict": "继续住最省钱，正式行程不变。海滩靠短程打车，适合这次景点和海边都想兼顾的安排。",
+            "items": [
+              [
+                "5日",
+                "入住后选五缘湾（打车约10—15分钟），或用椰风寨／会展海滩替换（约25—40分钟）。晚餐与夜宵仍按原计划。"
+              ],
+              [
+                "6日",
+                "早上厦大＋南普陀，下午老城或沙坡尾，晚上吃朱富贵；回酒店仍按原路线。去厦大打车约35—55分钟，公共交通约65—85分钟。"
+              ],
+              [
+                "7日",
+                "黄厝／椰风寨开放且天气合适才出发；看完立即回酒店补觉至约11点。12点前按订单退房并寄存行李，午后吃饭休息，不加景点。"
+              ],
+              [
+                "北站",
+                "地铁3号线到火炬园换1号线，门到门约55—75分钟；打车约25—40分钟。19点车建议约16:45—17:00取行李出发，实时路况差就提前。"
+              ]
+            ]
+          }
         },
         {
           "entity": "hotel-meifeng-ji",
@@ -2243,7 +2180,7 @@ const DATA={
           "type": "hotel",
           "time": "海滩候选 1 · 品牌与价格最均衡",
           "desc": "2026年全季，已查均价487元/晚；步行约12分钟到彩虹沙滩/环东浪漫线，东向海岸适合看日出。",
-          "detail": "彩虹沙滩780米12分钟；美峰公园470米7分钟；环东浪漫线850米12分钟；阳光小镇直线680米。\n北站：北站打车约25—40分钟；BRT需换快1/快6，约50—75分钟，不把快2误写直达北站\n南普陀/厦大：打车约55—85分钟；BRT进岛+市区接驳约85—115分钟\n十亿豪补，最少连住2晚、至多3间。非海景高级A332元，湖景高级435元，海景房需明确选487元的套餐。\n交通时间为规划估算，国庆需留堵车余量。实拍展示作者所住房型，不保证等同报价房型。\n小红书入住实拍：当前仅核到推广视频/建筑封面，未验证静态客房实拍；不把效果图当实拍。可点原笔记自行看视频，客房照片同时参考酒店平台。\\n【海滩状态】环东海域今年有分段修复，入住前必须确认最近公共入口是否开放；价格合适不等于施工风险消失。",
+          "detail": "彩虹沙滩780米12分钟；美峰公园470米7分钟；环东浪漫线850米12分钟；阳光小镇直线680米。\n北站：北站打车约25—40分钟；BRT需换快1/快6，约50—75分钟，不把快2误写直达北站\n南普陀/厦大：打车约55—85分钟；BRT进岛+市区接驳约85—115分钟\n十亿豪补，最少连住2晚、至多3间。非海景高级A332元，湖景高级435元，海景房需明确选487元的套餐。\n交通时间为规划估算，国庆需留堵车余量。实拍展示作者所住房型，不保证等同报价房型。\n小红书入住实拍：当前仅核到推广视频/建筑封面，未验证静态客房实拍；不把效果图当实拍。可点原笔记自行看视频，客房照片同时参考酒店平台。\n【海滩状态】环东海域今年有分段修复，入住前必须确认最近公共入口是否开放；价格合适不等于施工风险消失。",
           "reserve": "https://m.ctrip.com/html5/hotel/hoteldetail/133579145.html",
           "quote": {
             "id": "133579145",
@@ -2272,7 +2209,36 @@ const DATA={
           "noteId": "69f2fa9c000000001e00da06",
           "searchKeyword": "厦门 全季酒店",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97",
-          "appUrl": "xhsdiscover://item/69f2fa9c000000001e00da06"
+          "appUrl": "xhsdiscover://item/69f2fa9c000000001e00da06",
+          "routeImpact": {
+            "verdict": "适合把住宿、海景和日出放在首位。三家美峰酒店位置接近，行程变化基本相同；厦大和老城的往返会更远。",
+            "items": [
+              [
+                "房费",
+                "按原查均价，两晚约974元，比已订贵约279.38元。属于9月28日报价，不是当前锁价；房型、早餐和取消规则看上方报价及结算页。"
+              ],
+              [
+                "5日",
+                "北站直接打车去美峰片区（约25—40分钟），入住后逛彩虹沙滩／环东浪漫线，步行约12分钟。删除五缘湾和椰风寨的跨区往返；晚餐在阳光小镇／酒店周边就近吃，小眼镜不作为当晚主线。"
+              ],
+              [
+                "6日",
+                "保留厦大＋南普陀、老城／沙坡尾，一次进岛集中玩完。去厦大打车约55—85分钟，公共交通约85—115分钟，比基准单程通常多约20—30分钟；按预约时间提前出发，不中途回房。朱富贵尽量顺着当晚返程选门店，饭后回酒店；不再专程回五缘湾喝酒。"
+              ],
+              [
+                "7日",
+                "最近公共入口开放时，在彩虹沙滩看日出，约05:20出门并提前到机位；随后步行回房补觉至约11点。退房寄存行李，午后仅吃饭休息，不补集美或其他景点。若沙滩修复或天气不适合，直接睡觉。"
+              ],
+              [
+                "北站",
+                "打车约25—40分钟，或BRT换乘约50—75分钟。19点车可参考16:45—17:00取行李打车，预留国庆堵车和进站时间；不用为了乘车再进岛。"
+              ],
+              [
+                "取舍",
+                "比云顶北路更适合步行看日出，但把6日最重要的厦大与老城拉远。三家均需确认彩虹沙滩附近实际公共入口和施工范围，不能仅凭“环东浪漫线”宣传认定可走。"
+              ]
+            ]
+          }
         },
         {
           "entity": "hotel-meifeng-s",
@@ -2289,7 +2255,7 @@ const DATA={
           "type": "hotel",
           "time": "海滩候选 2 · 海景房优先",
           "desc": "2026年亚朵S，已查均价471元/晚；住客与酒店资料明确提到海景和清晨沙滩日出，步行约14分钟。",
-          "detail": "彩虹沙滩960米14分钟；美峰公园580米9分钟；阳光小镇直线770米。并非下楼3分钟到海滩。\n北站：北站打车约25—40分钟；BRT换乘约50—75分钟\n南普陀/厦大：打车约55—85分钟；公共交通约85—115分钟\n早鸟起价、提前至少3天。已展开高级双床496元、无早、入住当天12点前可免费取消；海景大床套餐请再展开确认。行政海景501元起，尊享海景552元起。\n交通时间为规划估算，国庆需留堵车余量。实拍展示作者所住房型，不保证等同报价房型。\\n【海滩状态】环东海域今年有分段修复，入住前必须确认最近公共入口是否开放；价格合适不等于施工风险消失。",
+          "detail": "彩虹沙滩960米14分钟；美峰公园580米9分钟；阳光小镇直线770米。并非下楼3分钟到海滩。\n北站：北站打车约25—40分钟；BRT换乘约50—75分钟\n南普陀/厦大：打车约55—85分钟；公共交通约85—115分钟\n早鸟起价、提前至少3天。已展开高级双床496元、无早、入住当天12点前可免费取消；海景大床套餐请再展开确认。行政海景501元起，尊享海景552元起。\n交通时间为规划估算，国庆需留堵车余量。实拍展示作者所住房型，不保证等同报价房型。\n【海滩状态】环东海域今年有分段修复，入住前必须确认最近公共入口是否开放；价格合适不等于施工风险消失。",
           "reserve": "https://m.ctrip.com/html5/hotel/hoteldetail/133574332.html",
           "quote": {
             "id": "133574332",
@@ -2333,7 +2299,36 @@ const DATA={
           "noteId": "6a46772500000000110103b5",
           "searchKeyword": "厦门 厦门同安美峰创谷海景亚朵S酒店",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%8E%A6%E9%97%A8%E5%90%8C%E5%AE%89%E7%BE%8E%E5%B3%B0%E5%88%9B%E8%B0%B7%E6%B5%B7%E6%99%AF%E4%BA%9A%E6%9C%B5S%E9%85%92%E5%BA%97",
-          "appUrl": "xhsdiscover://item/6a46772500000000110103b5"
+          "appUrl": "xhsdiscover://item/6a46772500000000110103b5",
+          "routeImpact": {
+            "verdict": "适合把住宿、海景和日出放在首位。三家美峰酒店位置接近，行程变化基本相同；厦大和老城的往返会更远。",
+            "items": [
+              [
+                "房费",
+                "按原查均价，两晚约942元，比已订贵约247.38元。属于9月28日报价，不是当前锁价；房型、早餐和取消规则看上方报价及结算页。"
+              ],
+              [
+                "5日",
+                "北站直接打车去美峰片区（约25—40分钟），入住后逛彩虹沙滩／环东浪漫线，步行约14分钟。删除五缘湾和椰风寨的跨区往返；晚餐在阳光小镇／酒店周边就近吃，小眼镜不作为当晚主线。"
+              ],
+              [
+                "6日",
+                "保留厦大＋南普陀、老城／沙坡尾，一次进岛集中玩完。去厦大打车约55—85分钟，公共交通约85—115分钟，比基准单程通常多约20—30分钟；按预约时间提前出发，不中途回房。朱富贵尽量顺着当晚返程选门店，饭后回酒店；不再专程回五缘湾喝酒。"
+              ],
+              [
+                "7日",
+                "最近公共入口开放时，在彩虹沙滩看日出，约05:20出门并提前到机位；随后步行回房补觉至约11点。退房寄存行李，午后仅吃饭休息，不补集美或其他景点。若沙滩修复或天气不适合，直接睡觉。"
+              ],
+              [
+                "北站",
+                "打车约25—40分钟，或BRT换乘约50—75分钟。19点车可参考16:45—17:00取行李打车，预留国庆堵车和进站时间；不用为了乘车再进岛。"
+              ],
+              [
+                "取舍",
+                "比云顶北路更适合步行看日出，但把6日最重要的厦大与老城拉远。三家均需确认彩虹沙滩附近实际公共入口和施工范围，不能仅凭“环东浪漫线”宣传认定可走。"
+              ]
+            ]
+          }
         },
         {
           "entity": "hotel-meifeng",
@@ -2350,7 +2345,7 @@ const DATA={
           "type": "hotel",
           "time": "海滩候选 3 · 最近沙滩",
           "desc": "2023年亚朵，已查均价534元/晚；步行约10分钟到彩虹沙滩，旁边有阳光小镇，适合看完日出快速回房补觉。",
-          "detail": "彩虹沙滩640米10分钟；美峰公园360米6分钟；阳光小镇直线280米。住客提到晚间海边音响，怕吵请备注安静房。\n北站：页面北站驾车10.5公里19分钟，国庆留25—40分钟；BRT换乘约50—75分钟\n南普陀/厦大：打车约55—85分钟；公共交通约85—115分钟\n早鸟起价、提前至少3天。低价雅致房407元无早但窗外遮挡，不作水景房报价；湖景几木488元起，40㎡湖景阳台房534元起。\n交通时间为规划估算，国庆需留堵车余量。实拍展示作者所住房型，不保证等同报价房型。\\n【海滩状态】环东海域今年有分段修复，入住前必须确认最近公共入口是否开放；价格合适不等于施工风险消失。",
+          "detail": "彩虹沙滩640米10分钟；美峰公园360米6分钟；阳光小镇直线280米。住客提到晚间海边音响，怕吵请备注安静房。\n北站：页面北站驾车10.5公里19分钟，国庆留25—40分钟；BRT换乘约50—75分钟\n南普陀/厦大：打车约55—85分钟；公共交通约85—115分钟\n早鸟起价、提前至少3天。低价雅致房407元无早但窗外遮挡，不作水景房报价；湖景几木488元起，40㎡湖景阳台房534元起。\n交通时间为规划估算，国庆需留堵车余量。实拍展示作者所住房型，不保证等同报价房型。\n【海滩状态】环东海域今年有分段修复，入住前必须确认最近公共入口是否开放；价格合适不等于施工风险消失。",
           "reserve": "https://m.ctrip.com/html5/hotel/hoteldetail/105478516.html",
           "quote": {
             "id": "105478516",
@@ -2394,18 +2389,47 @@ const DATA={
           "noteId": "69c0e89f000000001b00183e",
           "searchKeyword": "厦门 厦门美峰滨海浪漫线亚朵酒店",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%8E%A6%E9%97%A8%E7%BE%8E%E5%B3%B0%E6%BB%A8%E6%B5%B7%E6%B5%AA%E6%BC%AB%E7%BA%BF%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97",
-          "appUrl": "xhsdiscover://item/69c0e89f000000001b00183e"
+          "appUrl": "xhsdiscover://item/69c0e89f000000001b00183e",
+          "routeImpact": {
+            "verdict": "适合把住宿、海景和日出放在首位。三家美峰酒店位置接近，行程变化基本相同；厦大和老城的往返会更远。",
+            "items": [
+              [
+                "房费",
+                "按原查均价，两晚约1068元，比已订贵约373.38元。属于9月28日报价，不是当前锁价；房型、早餐和取消规则看上方报价及结算页。"
+              ],
+              [
+                "5日",
+                "北站直接打车去美峰片区（约25—40分钟），入住后逛彩虹沙滩／环东浪漫线，步行约10分钟。删除五缘湾和椰风寨的跨区往返；晚餐在阳光小镇／酒店周边就近吃，小眼镜不作为当晚主线。"
+              ],
+              [
+                "6日",
+                "保留厦大＋南普陀、老城／沙坡尾，一次进岛集中玩完。去厦大打车约55—85分钟，公共交通约85—115分钟，比基准单程通常多约20—30分钟；按预约时间提前出发，不中途回房。朱富贵尽量顺着当晚返程选门店，饭后回酒店；不再专程回五缘湾喝酒。"
+              ],
+              [
+                "7日",
+                "最近公共入口开放时，在彩虹沙滩看日出，约05:20出门并提前到机位；随后步行回房补觉至约11点。退房寄存行李，午后仅吃饭休息，不补集美或其他景点。若沙滩修复或天气不适合，直接睡觉。"
+              ],
+              [
+                "北站",
+                "打车约25—40分钟，或BRT换乘约50—75分钟。19点车可参考16:45—17:00取行李打车，预留国庆堵车和进站时间；不用为了乘车再进岛。"
+              ],
+              [
+                "取舍",
+                "比云顶北路更适合步行看日出，但把6日最重要的厦大与老城拉远。三家均需确认彩虹沙滩附近实际公共入口和施工范围，不能仅凭“环东浪漫线”宣传认定可走。"
+              ]
+            ]
+          }
         },
         {
           "name": "厦门会展中心观音山地铁站亚朵酒店",
           "lat": 24.496,
           "lng": 118.19,
           "time": "海滩候选 4 · 岛内通勤较好",
-          "desc": "2024年亚朵，已查均价503元/晚；第三方页面标注约510米到海滩、地铁约7分钟。实际公共入口和施工围挡需在10月4日复核。",
+          "desc": "2024年亚朵，原查双早503元／晚，报价房型为城景。观音山地铁站约7分钟；按携程资料，到观音山沙滩约1.7公里／25分钟，入口及围挡需复核。",
           "type": "hotel",
           "xhsKeyword": "厦门 厦门会展中心观音山地铁站亚朵酒店",
           "reserve": "https://m.ctrip.com/html5/hotel/hoteldetail/124184971.html",
-          "detail": "行政大床房，28㎡，1.8米床，城景\n入住当天12:00前免费取消；同房型无早456元为亚朵首单价，资格不确定；这里优先展示双早503元方案\n周边（携程页面）：观音山站步行500米/7分钟；东宅站750米/11分钟；观音山沙滩步行1.7公里/25分钟；塔埔社区自选店直线360米。\n北站（规划估算）：2号线吕厝换1号线，门到门留80—100分钟。\n以上为9月28日该账号日期查询；平均价格不是每晚各自价格，两晚约1006元仅为平均值乘2，结算总价可能有舍入或优惠条件差异。\n笔记客房照片用于看风格，作者所住房型可能与此处报价房型不同。\\n【海滩状态】观音山北段在本轮修复范围内，只有在10月4日确认可正常进入时才考虑换住。",
+          "detail": "行政大床房，28㎡，1.8米床，城景\n入住当天12:00前免费取消；同房型无早456元为亚朵首单价，资格不确定；这里优先展示双早503元方案\n周边（携程页面）：观音山站步行500米/7分钟；东宅站750米/11分钟；观音山沙滩步行1.7公里/25分钟；塔埔社区自选店直线360米。\n北站（规划估算）：2号线吕厝换1号线，门到门留80—100分钟。\n以上为9月28日该账号日期查询；平均价格不是每晚各自价格，两晚约1006元仅为平均值乘2，结算总价可能有舍入或优惠条件差异。\n笔记客房照片用于看风格，作者所住房型可能与此处报价房型不同。\n【海滩状态】观音山北段在本轮修复范围内，只有在10月4日确认可正常进入时才考虑换住。",
           "plan": "A",
           "entity": "hotel-atour",
           "photos": [
@@ -2472,7 +2496,40 @@ const DATA={
           "noteId": "69184a4d0000000007016745",
           "searchKeyword": "厦门 厦门会展中心观音山地铁站亚朵酒店",
           "searchUrl": "https://www.xiaohongshu.com/search_result/?keyword=%E5%8E%A6%E9%97%A8%20%E5%8E%A6%E9%97%A8%E4%BC%9A%E5%B1%95%E4%B8%AD%E5%BF%83%E8%A7%82%E9%9F%B3%E5%B1%B1%E5%9C%B0%E9%93%81%E7%AB%99%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97",
-          "appUrl": "xhsdiscover://item/69184a4d0000000007016745"
+          "appUrl": "xhsdiscover://item/69184a4d0000000007016745",
+          "routeImpact": {
+            "verdict": "岛内换住的折中选择：东侧海岸更近，厦大和老城仍可当天往返；但海滩步行约25分钟，北站地铁更远。为一次日出换房未必划算。",
+            "items": [
+              [
+                "房费与房型",
+                "原查双早503元／晚，两晚约1006元，比已订贵约311.38元；这是行政城景大床，不能按海景房期待。报价查于9月28日，需重新看10月5—7日结算价。"
+              ],
+              [
+                "5日",
+                "北站抵达后直接去这家酒店，不再去云顶北路。地铁1号线吕厝换2号线至观音山，步行约7分钟；下午改逛酒店附近确认开放的公共海岸，或短程打车去会展／椰风寨，五缘湾不再是首选。晚餐就近吃会展／前埔片区；小眼镜仅保留为愿意进城时的选择。"
+              ],
+              [
+                "6日白天",
+                "厦大＋南普陀、老城／沙坡尾都保留，顺序不变。去南普陀打车约30—50分钟，公共交通约60—80分钟，未明显拉长南部游览通勤。下午继续在老城，避免中途回酒店再出门。"
+              ],
+              [
+                "6日晚上",
+                "朱富贵吃完再回观音山。酒吧／海边喝酒改在住宿片区，删掉为湾悦城烧烤专程绕行；若7日准备早起，尽量22点前结束。海岸开放才去海边坐，施工时留在室内。"
+              ],
+              [
+                "7日日出与补觉",
+                "若最近公共沙滩入口确实开放，可约05:10—05:20从酒店出发，预留25—35分钟步行并提前到机位；也可打车，按酒店确认的入口导航。若需绕围挡，改打车去已确认开放的会展／椰风寨，不按“下楼即到”安排。看完直接回房补觉至约11点，退房后寄存行李，午后只吃饭休息，不追加景点。天气差直接睡觉。"
+              ],
+              [
+                "去厦门北站",
+                "2号线到吕厝换1号线，门到门留80—100分钟，比云顶北路基准多约25分钟。19点车建议16:30左右取行李出发，目标18点前后到站；当天拥堵或延误需更早。"
+              ],
+              [
+                "换住前要问",
+                "请酒店确认10月5—7日最近可进入的公共沙滩叫什么、入口在哪、步行多久，以及观音山北修复围挡是否影响通行。510米可能指近处海岸距离，不能等同可进入沙滩的路程；本页按携程1.7公里／25分钟作保守安排。"
+              ]
+            ]
+          }
         }
       ]
     },
@@ -3155,10 +3212,11 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout
 function allPoints(day){return (day?.locations||[]).filter(x=>x.lat&&x.lng&&(day.id===8||(x.plan||'A')==='A'))}
 function showMap(id){markers.forEach(x=>map.removeLayer(x));lines.forEach(x=>map.removeLayer(x));markers=[];lines=[];let pts=[],days=id===0?DAYS.filter(d=>d.id>=1&&d.id<=7):DAYS.filter(d=>d.id===id);days.forEach(day=>{let cs=[];allPoints(day).forEach((l,i)=>{let icon=L.divIcon({className:'pin',html:String(i+1),iconSize:[29,29],iconAnchor:[14,14]});let m=L.marker([l.lat,l.lng],{icon}).addTo(map).bindPopup('<b>'+esc(l.name)+'</b><br>'+esc(l.time)+'<br><a target="_blank" href="'+amap(l.name)+'">高德导航</a>');markers.push(m);pts.push([l.lat,l.lng]);cs.push([l.lat,l.lng])});if(id!==0&&cs.length>1)lines.push(L.polyline(cs,{color:day.color||'#176b73',weight:3,opacity:.65,dashArray:'6 7'}).addTo(map))});if(pts.length)map.fitBounds(pts,{padding:[35,35],maxZoom:id===0?11:14});document.getElementById('mapTitle').textContent=id===0?'全程地图':(DAYS.find(d=>d.id===id)?.label||'路线地图');setTimeout(()=>map.invalidateSize(),100)}
 function shot(loc){let ps=(loc.photos||[]).slice(0,3);if(!ps.length)return'';let imgs=ps.map((p,i)=>'<a class="gallery-item g'+i+'" target="_blank" rel="noopener" href="'+esc(p.url||loc.xhs)+'"><img loading="lazy" src="'+esc(p.localSrc||p.src)+'" alt="'+esc(loc.name)+'实拍 '+(i+1)+'"></a>').join('');let p=ps[0];return '<div class="gallery" data-count="'+ps.length+'">'+imgs+'</div><div class="gallery-caption">'+esc(p.author)+' · '+esc(p.date)+'　<a target="_blank" href="'+esc(p.url||loc.xhs)+'">查看小红书原笔记</a></div>'}
-function card(l,id){let refs=(l.researchLinks||[]).map(r=>'<a target="_blank" href="'+esc(r.url)+'">'+esc(r.title)+'</a>').join(' · '),q=l.quote;return '<article class="stop"><div class="stop-time">'+esc(l.time)+'</div><div class="stop-body"><h2>'+esc(l.name)+'</h2><p>'+esc(l.desc)+'</p>'+(q?'<div class="budget">'+esc(q.room)+' · ¥'+q.avg+'/晚</div>':l.budget?'<div class="budget">'+esc(l.budget)+'</div>':'')+shot(l)+'<div class="actions"><a target="_blank" href="'+amap(l.name)+'">高德导航</a>'+(l.xhs?'<a target="_blank" href="'+esc(l.xhs)+'">小红书实拍</a>':'')+(l.reserve?'<a target="_blank" href="'+esc(l.reserve)+'">'+(q?'查房型':'预约/资料')+'</a>':'')+'</div>'+(l.detail||refs?'<details class="more"><summary>交通、机位与依据</summary><div>'+esc(l.detail||'').replace(/\n/g,'<br>')+(refs?'<br>'+refs:'')+'</div></details>':'')+'</div></article>'}
+function hotelImpact(l){let r=l.routeImpact;if(!r)return '';return '<section class="hotel-impact"><h3>换住后怎么安排</h3><p>'+esc(r.verdict)+'</p><dl>'+r.items.map(x=>'<div><dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd></div>').join('')+'</dl><small>通勤为规划估算，国庆按实时导航留余量；这里比较两晚都换住，不建议中间搬酒店。</small></section>'}
+function card(l,id){let refs=(l.researchLinks||[]).map(r=>'<a target="_blank" href="'+esc(r.url)+'">'+esc(r.title)+'</a>').join(' · '),q=l.quote;return '<article class="stop"><div class="stop-time">'+esc(l.time)+'</div><div class="stop-body"><h2>'+esc(l.name)+'</h2><p>'+esc(l.desc)+'</p>'+(q?'<div class="budget">'+esc(q.room)+' · ¥'+q.avg+'/晚</div>':l.budget?'<div class="budget">'+esc(l.budget)+'</div>':'')+(id===8?hotelImpact(l):'')+shot(l)+'<div class="actions"><a target="_blank" href="'+amap(l.name)+'">高德导航</a>'+(l.xhs?'<a target="_blank" href="'+esc(l.xhs)+'">小红书实拍</a>':'')+(l.reserve?'<a target="_blank" href="'+esc(l.reserve)+'">'+(q?'查房型':'预约/资料')+'</a>':'')+'</div>'+(l.detail||refs?'<details class="more"><summary>交通、机位与依据</summary><div>'+esc(l.detail||'').replace(/\n/g,'<br>')+(refs?'<br>'+refs:'')+'</div></details>':'')+'</div></article>'}
 function overview(){let a=DATA.alerts?.[0],flow=DAYS.filter(d=>d.id>=1&&d.id<=7);return DATA.overview+'<section class="booking"><div><h2>'+esc(DATA.hotel.name)+'</h2><p>'+esc(DATA.hotel.transit)+'</p><p>'+esc(DATA.hotel.quote.near)+'</p></div><div><div class="price">¥694.62 / 两晚</div><p>高级大床房 · 可免费取消 · 当前住宿基准</p></div></section>'+(a?'<aside class="notice"><strong>'+esc(a.title)+'</strong><p>'+esc(a.body)+'</p><div class="notice-links">'+a.links.map(x=>'<a target="_blank" href="'+esc(x.url)+'">'+esc(x.title)+'</a>').join('')+'</div></aside>':'')+'<div class="route-list">'+flow.map(d=>'<div class="route-row" data-go="'+d.id+'"><time>'+esc(d.label)+'</time><b>'+esc(d.title)+'</b><span>查看路线</span></div>').join('')+'</div>'}
 function dayPage(d){return '<header class="day-head"><p class="kicker">'+esc(d.label)+'</p><h1>'+esc(d.title)+'</h1><p>'+esc(d.date)+'</p></header>'+['A','B','C'].map(p=>{let g=d.locations.filter(l=>(l.plan||'A')===p);return g.length?'<section class="plan '+p+'"><div class="plan-title"><b>Plan '+p+'</b><span>'+labels[p]+'</span></div>'+g.map(l=>card(l,d.id)).join('')+'</section>':''}).join('')}
-function hotels(){let hs=DAYS.find(d=>d.id===8).locations;return '<header class="hotel-intro"><div><p class="kicker">已订基准＋4家海滩候选</p><h1>酒店比较</h1></div><p>正式行程继续按已订云顶北路全季执行。替换候选只保留已查均价350—600元、可步行到东向海岸的酒店；环东与观音山存在分段修复，10月4日确认公共入口开放后再决定是否换房。</p></header><table class="hotel-table"><thead><tr><th>酒店 / 开业</th><th>交通</th><th>每晚</th></tr></thead><tbody>'+hs.map((h,i)=>'<tr class="hotel-row" data-hotel="'+i+'"><td><b>'+esc(h.name)+'</b><br><small>'+esc(h.year)+' · '+esc(h.zone)+' · '+esc(h.water)+'</small></td><td>'+esc(h.transit)+'</td><td class="money">¥'+esc(h.quote.avg)+'</td></tr>').join('')+'</tbody></table>'+hs.map((h,i)=>'<details class="hotel-details" id="hotel-'+i+'"><summary><span>'+String(i+1).padStart(2,'0')+'　'+esc(h.name)+'</span><span>¥'+esc(h.quote.avg)+'</span></summary>'+card(h,8)+'</details>').join('')}
+function hotels(){let hs=DAYS.find(d=>d.id===8).locations;return '<header class="hotel-intro"><div><p class="kicker">已订基准＋4家海滩候选</p><h1>酒店比较</h1></div><p>正式行程继续按已订云顶北路全季执行。候选为原查均价350—600元。展开可看换住后每天怎么走；观音山重点方案已展开。报价未锁定，环东与观音山需在10月4日确认公共沙滩入口开放再决定。</p></header><table class="hotel-table"><thead><tr><th>酒店 / 开业</th><th>交通</th><th>每晚</th></tr></thead><tbody>'+hs.map((h,i)=>'<tr class="hotel-row" data-hotel="'+i+'"><td><b>'+esc(h.name)+'</b><br><small>'+esc(h.year)+' · '+esc(h.zone)+' · '+esc(h.water)+'</small></td><td>'+esc(h.transit)+'</td><td class="money">¥'+esc(h.quote.avg)+'</td></tr>').join('')+'</tbody></table>'+hs.map((h,i)=>'<details class="hotel-details" '+(h.entity==='hotel-atour'?'open ':'')+'id="hotel-'+i+'"><summary><span>'+String(i+1).padStart(2,'0')+'　'+esc(h.name)+'</span><span>¥'+esc(h.quote.avg)+'</span></summary>'+card(h,8)+'</details>').join('')}
 function go(id){current=+id;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',+x.dataset.id===current));document.getElementById('content').innerHTML=current===0?overview():current===8?hotels():dayPage(DAYS.find(d=>d.id===current));document.querySelector('.content').scrollTop=0;showMap(current);document.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>go(x.dataset.go));document.querySelectorAll('[data-hotel]').forEach(x=>x.onclick=()=>{let e=document.getElementById('hotel-'+x.dataset.hotel);e.open=true;e.scrollIntoView({behavior:'smooth',block:'start'})})}
 document.getElementById('tabs').innerHTML=visibleIds.map(id=>{let d=DAYS.find(x=>x.id===id);return '<button class="tab" data-id="'+id+'">'+(id===0?'总览':id===8?'酒店':id===9?'美食':id===10?'影视机位':esc(d.label.replace('·',' ')))+'</button>'}).join('');document.querySelectorAll('.tab').forEach(x=>x.onclick=()=>go(x.dataset.id));document.querySelector('.brand').onclick=e=>{e.preventDefault();go(0)};
 document.getElementById('mapToggle').onclick=()=>{let p=document.getElementById('mapPanel'),b=document.getElementById('mapToggle');p.classList.toggle('collapsed');b.textContent=p.classList.contains('collapsed')?'展开地图':'收起地图';setTimeout(refreshMap,120)};go(0);
